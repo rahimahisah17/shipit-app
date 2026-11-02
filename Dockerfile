@@ -5,4 +5,4 @@ ENV PORT=8080
 EXPOSE 8080
 USER nobody
 CMD ["python", "app.py"]
-LABEL org.opencontainers.image.source=https://github.com/rahimahisah17/shipit
+LABEL org.opencontainers.image.source=https://github.com/rahimahisah17/shipit-app
