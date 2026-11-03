@@ -154,10 +154,6 @@ docker stop shipit
 
 You can also run the app without Docker: `python app.py`.
 
-![Building the image](docs/images/04-docker-build.png)
-
-![Running the container and testing it with curl](docs/images/05-docker-run-curl-stop.png)
-
 ## Publish the image to GHCR
 
 Create a personal access token (classic) with only the `write:packages` scope, then log in, build, tag and push:
@@ -173,11 +169,11 @@ docker push ghcr.io/$GH_USER/shipit-app:v1
 A new GHCR package is **private by default**. For Azure to pull it without credentials, change it to public: your profile → **Packages** → `shipit-app` → **Package settings** → **Danger Zone** → **Change visibility** → **Public**.
 
 
-![Pushing the image to GHCR](image.png)
+![Pushing the image to GHCR](screenshots/image.png)
 
-![Changing the package visibility](image-1.png)
+![Changing the package visibility](screenshots/image-1.png)
 
-![The package is public](image-2.png)
+![The package is public](screenshots/image-2.png)
 
 ## Deploy to Azure Container Apps
 
@@ -214,15 +210,15 @@ curl $APP_URL
 ```
 
 
-![Creating the resource group](image-3.png)
+![Creating the resource group](screenshots/image-3.png)
 
-![Deploying with az containerapp up](image-4.png)
+![Deploying with az containerapp up](screenshots/image-4.png)
 
-![Testing the live URL](image-6.png)
+![Testing the live URL](screenshots/image-6.png)
 > **Live demo:** I deleted the Azure resource group after finishing the lab so nothing keeps costing money, so the public URL no longer responds. The screenshot below shows the app while it was live.
 
 
-![The live app in the browser](image-7.png)
+![The live app in the browser](screenshots/image-7.png)
 ## The CI/CD pipeline
 
 The workflow in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) runs on every push to `main`, and can also be started manually (`workflow_dispatch`).
@@ -294,13 +290,13 @@ az ad sp create-for-rbac \
 
 **3. Allow the repository to push to the package.** If the image was first pushed from your own machine, the workflow's `GITHUB_TOKEN` can't write to it until you grant access: open the package → **Package settings** → **Manage Actions access** → **Add Repository**, choose this repo and set the role to **Write**.
 
-![The first pipeline run fails](image-8.png)
+![The first pipeline run fails](screenshots/image-8.png)
 
-![Giving the repository Write access to the package](image-9.png)
+![Giving the repository Write access to the package](screenshots/image-9.png)
 
-![The re-run succeeds](image-10.png)
+![The re-run succeeds](screenshots/image-10.png)
 
-![The live app serves the new message after the pipeline ran](image-11.png)
+![The live app serves the new message after the pipeline ran](screenshots/image-11.png)
 
  |
 ## Troubleshooting
