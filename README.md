@@ -1,6 +1,6 @@
 # shipit-app
 
-[![deploy](https://github.com/rahimahisah17/shipit-app/actions/workflows/deploy.yml/badge.svg)](https://github.com/rahimahisah17/shipit-app/actions/workflows/deploy.yml)
+[![deploy: disabled](https://img.shields.io/badge/deploy-disabled-lightgrey)](https://github.com/rahimahisah17/shipit-app/actions/workflows/deploy.yml)
 ![Python](https://img.shields.io/badge/python-3.12-blue)
 ![Docker](https://img.shields.io/badge/docker-ready-2496ED)
 ![Azure Container Apps](https://img.shields.io/badge/azure-container%20apps-0078D4)
